@@ -3,60 +3,45 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Database helteDatabase = new Database();
+        Database superHeroDatabase = new Database();
 
-        int brugerValg = 0;
+        int userChoice = 0;
         do {
             System.out.println("""
-                    Velkommen til superhelte universet
-                    1. Opret superhelt
-                    9. Afslut
+                    Welcome to the SUPERHERO COLLECTOR!
+                    Type 1 to CREATE A NEW HERO
+                    Type 2 to CHECK YOUR COLLECTION OF HEROES!
+                    TYPE 5 to EXIT THE PROGRAM
                     """);
 
-
-            brugerValg = sc.nextInt();
+            userChoice = sc.nextInt();
             sc.nextLine();
-            if (brugerValg == 1) {
+            if (userChoice == 1) {
+                System.out.println("Enter the name of your superhero!");
+                String heroName = sc.nextLine();
+                System.out.println("Enter the superpower of your hero!");
+                String superpower = sc.nextLine();
+                System.out.println("In what year were your hero created?");
+                int birthyear = sc.nextInt();
+                System.out.println("What is the name of your hero, when he's not in uniform?");
+                String realName = sc.next();
+                System.out.println("How tall is your hero?");
+                double height = sc.nextInt();
+                System.out.println("What is the weight of your hero in kilograms?");
+                int weight = sc.nextInt();
+                System.out.println("From 1-99 rate the overall strenght of your superhero!");
+                int overallStrenght = sc.nextInt();
 
-
-                System.out.println("Giv din helt et navn");
-
-                String navn = sc.nextLine();
-                System.out.println(" ");
-
-                System.out.println("Giv helten en super kraft");
-                String superkraft = sc.nextLine();
-                System.out.println(" ");
-
-
-                System.out.println("Angiv en fødselsdag til helten");
-                int fødselsdag = sc.nextInt();
-                System.out.println(" ");
-
-
-                System.out.println("Angiv heltens sandenavn");
-                String SandeNavn = sc.next();
-                System.out.println(" ");
-
-
-                System.out.println("Angiv heltens højde");
-                double Højde = sc.nextDouble();
-                System.out.println(" ");
-
-
-                System.out.println("Angiv heltens vægt");
-                int vægt = sc.nextInt();
-                System.out.println(" ");
-
-                helteDatabase.addSuperhelt(navn, superkraft, fødselsdag, SandeNavn, Højde, vægt);
-
-
-            } else {
-                System.exit(0);
+                superHeroDatabase.addSuperhero(heroName, superpower, birthyear, realName, height, weight, overallStrenght);
+                System.out.println("Congrats! Your SUPERHERO has succesfully been registred!");
+            }
+            if (userChoice == 2) {
+                System.out.print("Here is a collection of your saved heroes!"); //få database fra array..?
             }
 
-
+        } while (userChoice != 5);
+        {
+            System.out.println("Thank you for using the SUPERHERO COLLECTOR! Have a great day!");
         }
-        while (brugerValg != 9);
     }
 }

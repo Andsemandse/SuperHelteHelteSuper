@@ -1,12 +1,23 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Database {
-    //private Superhero[] database = new Superhero[6];
     private ArrayList<Superhero> database = new ArrayList();
-    //private int count = 0;
 
-    public void addSuperhelt(String navn, String superkraft, int fødselsdag, String SandeNavn, double højde, int vægt){
-        Superhero superhelt = new Superhero(navn, superkraft, fødselsdag, SandeNavn, højde, vægt);
+    Scanner sc;
 
+    public Database() {
+        ArrayList<Superhero> superheroDatabase = new ArrayList();
+    }
+
+    public ArrayList<Superhero> getSuperheroDatabase() {
+        return getSuperheroDatabase();
+    }
+
+    public void addSuperhero(String heroName, String superpower, int birthyear, String realName, double height, int
+            weight, int overallStrenght) {
+    }
+
+    public void addSuperhero() {
     }
 }
